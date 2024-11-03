@@ -1,0 +1,1 @@
+export const commonClass = "outline-blue-800 rounded-md bg-gray-100 font-medium w-full"

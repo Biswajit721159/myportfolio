@@ -1,8 +1,12 @@
+import { useState } from 'react';
 import { Button, TextField, Typography } from '@mui/material';
 import MarkunreadIcon from '@mui/icons-material/Markunread';
 import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { toast } from 'react-toastify';
+import { sendMessage } from '../utilities/mesageApi';
 const Contact = () => {
+
+
     const copyEmail = (Email) => {
         navigator.clipboard.writeText(Email)
             .then(() => {
@@ -12,6 +16,7 @@ const Contact = () => {
                 toast.error("Failed to copy Email!");
             });
     }
+
     const copyMobile = (mobile) => {
         navigator.clipboard.writeText(mobile)
             .then(() => {
@@ -21,19 +26,59 @@ const Contact = () => {
                 toast.error("Failed to copy mobile number!");
             });
     }
+
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        message: '',
+    });
+    const [loading, setLoading] = useState(false)
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            setLoading(true);
+            let response = await sendMessage(formData);
+            setFormData((prev) => ({
+                ...prev,
+                name: '',
+                email: '',
+                message: '',
+            }))
+            toast.success(response?.message);
+        } catch (e) {
+            toast.warn(e.message);
+        }
+        finally {
+            setLoading(false)
+        }
+    };
+
+
+
     return (
         <section id="contact" className="bg-gray-200 py-3">
             <div className="container mx-auto p-3 text-center">
                 <div className='flex justify-evenly flex-wrap'>
                     <div>
                         <Typography variant="h6" className="font-bold">Message Me</Typography>
-                        <form className="max-w-md mx-auto mt-5 space-y-4">
+                        <form className="max-w-md mx-auto mt-5 space-y-4" onSubmit={handleSubmit}>
                             <TextField
                                 label="Name"
                                 variant="outlined"
                                 fullWidth
                                 required
                                 size='small'
+                                name='name'
+                                onChange={handleChange}
+                                value={formData.name}
                             />
                             <TextField
                                 label="Email"
@@ -41,6 +86,9 @@ const Contact = () => {
                                 fullWidth
                                 required
                                 size='small'
+                                name='email'
+                                onChange={handleChange}
+                                value={formData.email}
                             />
                             <TextField
                                 label="Message"
@@ -50,8 +98,12 @@ const Contact = () => {
                                 rows={4}
                                 required
                                 size='small'
+                                name='message'
+                                onChange={handleChange}
+                                spellCheck={false}
+                                value={formData.message}
                             />
-                            <Button type="submit" variant="contained" color="primary" fullWidth>Send Message</Button>
+                            <Button disabled={loading} type="submit" variant="contained" color="primary" fullWidth>Send Message</Button>
                         </form>
                     </div>
                     <div className='flex flex-col items-center'>
