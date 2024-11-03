@@ -5,6 +5,7 @@ import FileOpenIcon from '@mui/icons-material/FileOpen';
 import leetcode from '../images/leetcode.png'
 import hackerRank from '../images/hackerRank.webp'
 import GeeksForGeeks from '../images/GeeksForGeeks.jpeg'
+import WavingHandIcon from '@mui/icons-material/WavingHand';
 const Hero = () => {
 
     const openLinked = () => {
@@ -32,8 +33,8 @@ const Hero = () => {
             className="bg-hero-pattern bg-cover bg-center min-h-[50vh] flex items-center justify-center text-center text-white bg-blue-500"
         >
             <div className="bg-opacity-40 p-10 rounded-lg">
-                <Typography variant="h4" className="font-bold">Hello, My name is Biswajit Ghosh </Typography>
-                <div className='flex justify-evenly mt-10'>
+                <Typography variant="h4" className="font-bold"><WavingHandIcon sx={{ color: 'yellow' }} /> Hello, My name is Biswajit Ghosh </Typography>
+                <div className='flex justify-evenly mt-10 flex-wrap'>
                     <button className='mx-4' onClick={openLinked}>
                         <LinkedInIcon fontSize='small' /> LinkedIn
                     </button>
