@@ -16,18 +16,16 @@ const NotFound = () => {
             <Typography variant="h5" className="text-2xl font-semibold text-gray-700 mb-4">
                 Page Not Found
             </Typography>
-            <Typography className="text-gray-500 mb-8">
-                Sorry, the page you are looking for doesn’t exist.
+            <Typography className="text-gray-500 mb-8 mt-5">
+                Sorry, the page you are looking for doesn't exist.
             </Typography>
-            <span className="text-8xl mb-8">😕</span>
-            <Button
-                variant="contained"
-                color="primary"
+            <span className="text-8xl mb-8 mt-5">😕</span>
+            <button
                 onClick={handleGoHome}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
             >
                 Go to Home
-            </Button>
+            </button>
         </div>
     );
 };
