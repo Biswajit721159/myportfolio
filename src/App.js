@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 function App() {
   return (
-    <div className="min-h-screen bg-gray-100 text-red-800">
+    <div className="min-h-screen bg-gray-100 text-black-800">
       {/* Header */}
       <header className="bg-blue-600 text-white p-6 shadow-md">
         <div className="container mx-auto flex justify-between items-center">
