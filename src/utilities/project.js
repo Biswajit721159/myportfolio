@@ -11,7 +11,7 @@ const projects = [
     },
     {
         name: 'Student Result Management System',
-        description: "In this application i am creating a student result management admin panel dashboard where a admin can manage class,student data,subject,and also declare result of a particular student .The student can downlode his result ,give feedback, and also Reviews his subject",
+        description: "In this application, I am creating a student result management admin panel dashboard where an admin can manage classes, student data, subjects, and declare results for individual students. Students can download their results, provide feedback, and review their subjects.",
         url: 'https://github.com/Biswajit721159/Student_result_management_system',
     },
 ]
