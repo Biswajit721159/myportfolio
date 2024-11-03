@@ -80,8 +80,9 @@ const Frameworks = () => {
 const OtherSkills = () => {
     const otherSkillsList = [
         'Data Structures and Algorithms',
-        'MongoDB',
         'OOPS',
+        'Open AI',
+        'MongoDB',
         'HTML',
         'CSS',
         'SQL',

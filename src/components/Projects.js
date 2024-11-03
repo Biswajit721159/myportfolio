@@ -50,7 +50,7 @@ const PrintTechStack = ({ data }) => {
                 data?.map((el, index) => (
                     <p
                         key={index}
-                        className='mx-1 p-1 mt-1 text-sm border-2 text-gray-500 border-gray-500 rounded-lg'
+                        className='mx-1 mt-1 bg-gray-200 text-gray-800 px-2 py-1 rounded-full text-sm'
                     >
                         {el}
                     </p>
