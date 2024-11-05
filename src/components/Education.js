@@ -31,14 +31,14 @@ const Education = () => {
                     educations.map((el, index) => (
                         <div className="" key={index}>
                             <div className="flex justify-between">
-                                <div className="flex gap-1">
+                                <div className="flex gap-1 text-gray-600">
                                     <FiberManualRecordIcon sx={{ fontSize: '8px', marginTop: '6px', color: 'gray' }} />
                                     <p className="font-bold">{el.instituteName}</p>
                                 </div>
-                                <p className="font-bold">{el.marks}</p>
+                                <p className="font-bold text-gray-600">{el.marks}</p>
                             </div>
                             <div className="flex justify-between">
-                                <p className="text-sm text-gray-600">{el.degree}</p>
+                                <p className="text-sm text-gray-600"> - {el.degree}</p>
                                 <p className="text-sm text-gray-600">{el.duration}</p>
                             </div>
                         </div>

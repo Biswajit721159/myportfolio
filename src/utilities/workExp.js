@@ -3,7 +3,7 @@ const workExperiences = [
         jobTitle: 'Software Development Engineer',
         company: 'Riktam Technologies',
         duration: 'Jan 2020 - Present: 1 year 6 month (Hyderabad)',
-        techStacks: ['React Js', 'Node Js', 'Open AI', 'HTML', 'CSS', 'MUI', 'Tailwind Css', 'MongoDb', 'Git / Github'],
+        techStacks: ['React Js', 'Node Js', 'Express Js', 'Redux Js', 'Open AI', 'HTML', 'CSS', 'MUI', 'Tailwind Css', 'MongoDb', 'Git / Github'],
         projectName: 'Zinterview.ai - AI-Based Interview Platform',
         tasks: [
             {
