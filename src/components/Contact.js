@@ -67,7 +67,7 @@ const Contact = () => {
         <section id="contact" className="bg-gray-200 py-3">
             <div className="container mx-auto p-3 text-center">
                 <div className='flex justify-evenly flex-wrap'>
-                    <div>
+                    <div className='mt-2'>
                         <Typography variant="h6" className="font-bold">Message Me</Typography>
                         <form className="max-w-md mx-auto mt-5 space-y-4" onSubmit={handleSubmit}>
                             <TextField
@@ -106,7 +106,7 @@ const Contact = () => {
                             <Button disabled={loading} type="submit" variant="contained" color="primary" fullWidth>Send Message</Button>
                         </form>
                     </div>
-                    <div className='flex flex-col items-center'>
+                    <div className='flex flex-col items-center mt-2'>
                         <div className=''>
                             <Typography variant="h6" className="font-bold">Contact Info</Typography>
                         </div>

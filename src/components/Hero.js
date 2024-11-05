@@ -39,12 +39,12 @@ const Hero = () => {
                         <LinkedInIcon fontSize='small' /> LinkedIn
                     </button>
                     <button className='mx-4 mt-2' onClick={openGithub}>
-                        <GitHubIcon fontSize='small' /> Github
+                        <GitHubIcon fontSize='small' /> GitHub
                     </button>
                     <button className='mx-4 mt-2' onClick={openLeetcode}>
                         <div className='flex'>
                             <img src={leetcode} className='w-4 h-4 rounded-md mt-1 mx-1' />
-                            Leetcode
+                            LeetCode
                         </div>
                     </button>
                     <button className='mx-4 mt-2' onClick={opneGeeksForGeeks}>
@@ -56,7 +56,7 @@ const Hero = () => {
                     <button className='mx-4 mt-2' onClick={openHackerRank}>
                         <div className='flex'>
                             <img src={hackerRank} className='w-4 h-4 rounded-md mt-1 mx-1' />
-                            hackerRank
+                            HackerRank
                         </div>
                     </button>
                     <button className='mx-4 mt-2' onClick={openResume}>

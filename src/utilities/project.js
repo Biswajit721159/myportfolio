@@ -4,7 +4,7 @@ const projects = [
         description: "This is an e-commerce website for furniture where users can buy furniture. The project includes features such as Login, Register, Cart, Wishlist, My Orders, User Profile, Recent Views, etc.Additionally, there is an admin panel where users can perform CRUD operations.",
         url: 'https://quality-furnitureforkolkata.vercel.app/',
         gitHubLink: 'https://github.com/Biswajit721159/Quality_furniture',
-        TechStack: ['React Js', 'Node Js', 'Express Js', 'Redux JS', 'MongoDB', 'MUI', "TailWind CSS"],
+        TechStack: ['React Js', 'Node Js', 'Express Js', 'Redux JS', 'MongoDB', 'MUI', "BootStrap"],
     },
     {
         name: 'Bus Ticket Book Application',
@@ -18,7 +18,7 @@ const projects = [
         description: "In this application, I am creating a student result management admin panel dashboard where an admin can manage classes, student data, subjects, and declare results for individual students. Students can download their results, provide feedback, and review their subjects.",
         url: 'https://github.com/Biswajit721159/Student_result_management_system',
         gitHubLink: 'https://github.com/Biswajit721159/Student_result_management_system',
-        TechStack: ['HTML', 'CSS', 'Django'],
+        TechStack: ['HTML', 'CSS', 'Django', 'MySql', 'BootStrap'],
     },
 ]
 
