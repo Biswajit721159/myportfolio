@@ -8,19 +8,19 @@ const About = () => {
                 About Me
             </Typography>
             <p className="mt-5 text-gray-500 flex items-center">
-                <DotIcon /> <span className="text-blue-500 ml-1"> Introduction - </span>
+                <DotIcon /> <span className="text-blue-500 ml-1"> Introduction: </span>
                 <Introduction />
             </p>
             <p className="mt-5 text-gray-500 flex items-center">
-                <DotIcon /><span className="text-blue-500 ml-1"> Programming Languages - </span>
+                <DotIcon /><span className="text-blue-500 ml-1"> Programming Languages: </span>
                 <Languages />
             </p>
             <p className="mt-5 text-gray-500 flex items-center">
-                <DotIcon /> <span className="text-blue-500 ml-1"> Frameworks - </span>
+                <DotIcon /> <span className="text-blue-500 ml-1"> Frameworks: </span>
                 <Frameworks />
             </p>
             <p className="mt-5 text-gray-500 flex items-center">
-                <DotIcon /> <span className="text-blue-500 ml-1"> Other Skills - </span>
+                <DotIcon /> <span className="text-blue-500 ml-1"> Other Skills: </span>
                 <OtherSkills />
             </p>
         </section>

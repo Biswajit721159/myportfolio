@@ -4,13 +4,15 @@ import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import WorkingExp from './WorkingExp'
+import Achievements from './Achievements'
 const Home = () => {
     return (
         <>
             <Hero />
             <About />
-            <WorkingExp/>
+            <WorkingExp />
             <Projects />
+            <Achievements />
             <Contact />
             <Footer />
         </>

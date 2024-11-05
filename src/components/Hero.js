@@ -35,10 +35,10 @@ const Hero = () => {
             <div className="bg-opacity-40 p-10 rounded-lg">
                 <Typography variant="h4" className="font-bold"><WavingHandIcon sx={{ color: 'yellow' }} /> Hello, My name is Biswajit Ghosh </Typography>
                 <div className='flex justify-evenly mt-10 flex-wrap'>
-                    <button className='mx-4' onClick={openLinked}>
+                    <button className='mx-4 mt-2' onClick={openLinked}>
                         <LinkedInIcon fontSize='small' /> LinkedIn
                     </button>
-                    <button className='mx-4' onClick={openGithub}>
+                    <button className='mx-4 mt-2' onClick={openGithub}>
                         <GitHubIcon fontSize='small' /> Github
                     </button>
                     <button className='mx-4' onClick={openLeetcode}>
@@ -47,19 +47,19 @@ const Hero = () => {
                             Leetcode
                         </div>
                     </button>
-                    <button className='mx-4' onClick={opneGeeksForGeeks}>
+                    <button className='mx-4 mt-2' onClick={opneGeeksForGeeks}>
                         <div className='flex'>
                             <img src={GeeksForGeeks} className='w-4 h-4 rounded-md mt-1 mx-1' />
                             GeeksForGeeks
                         </div>
                     </button>
-                    <button className='mx-4' onClick={openHackerRank}>
+                    <button className='mx-4 mt-2' onClick={openHackerRank}>
                         <div className='flex'>
                             <img src={hackerRank} className='w-4 h-4 rounded-md mt-1 mx-1' />
                             hackerRank
                         </div>
                     </button>
-                    <button className='mx-4' onClick={openResume}>
+                    <button className='mx-4 mt-2' onClick={openResume}>
                         <FileOpenIcon fontSize='small' /> Resume
                     </button>
                 </div>
