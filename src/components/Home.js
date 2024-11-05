@@ -3,8 +3,9 @@ import About from "./About";
 import Projects from "./Projects";
 import Contact from "./Contact";
 import Footer from "./Footer";
-import WorkingExp from './WorkingExp'
-import Achievements from './Achievements'
+import WorkingExp from './WorkingExp';
+import Education from './Education';
+import Achievements from './Achievements';
 const Home = () => {
     return (
         <>
@@ -12,6 +13,7 @@ const Home = () => {
             <About />
             <WorkingExp />
             <Projects />
+            <Education/>
             <Achievements />
             <Contact />
             <Footer />
