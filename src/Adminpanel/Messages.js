@@ -57,23 +57,23 @@ const Messages = () => {
                 <table className="table-auto w-full bg-white text-sm text-left border-collapse">
                     <thead>
                         <tr className="bg-gray-200">
-                            <th className="py-2 px-4 border-b">Name</th>
-                            <th className="py-2 px-4 border-b">Email</th>
-                            <th className="py-2 px-4 border-b">Message</th>
-                            <th className="py-2 px-4 border-b">Date</th>
-                            <th className="py-2 px-4 border-b">Delete</th>
+                            <th className="py-2 px-4 border-b text-center">Name</th>
+                            <th className="py-2 px-4 border-b  text-center">Email</th>
+                            <th className="py-2 px-4 border-b  text-center">Message</th>
+                            <th className="py-2 px-4 border-b  text-center">Date</th>
+                            <th className="py-2 px-4 border-b  text-center">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
                         {messages && messages?.map((msg, index) => (
                             <tr key={msg._id} className="text-center border-b">
-                                <td className="py-2 px-4 border-b">{msg.name}</td>
-                                <td className="py-2 px-4 border-b">{msg.email}</td>
-                                <td className="py-2 px-4 border-b">{msg.message}</td>
-                                <td className="py-2 px-4 border-b">
+                                <td className="py-2 px-4 border-b  text-center">{msg.name}</td>
+                                <td className="py-2 px-4 border-b  text-center">{msg.email}</td>
+                                <td className="py-2 px-4 border-b  text-center">{msg.message}</td>
+                                <td className="py-2 px-4 border-b  text-center">
                                     {new Date(msg.createdAt).toLocaleDateString()}
                                 </td>
-                                <td className="py-2 px-4 border-b">
+                                <td className="py-2 px-4 border-b  text-center">
                                     <DeleteIcon className="cursor-pointer text-red-500" onClick={() => deleteMess(msg._id)} />
                                 </td>
                             </tr>

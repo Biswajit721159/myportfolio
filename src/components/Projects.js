@@ -21,13 +21,13 @@ const Projects = () => {
                                 <PrintTechStack data={data.TechStack || []} />
                                 <div className='flex justify-evenly'>
                                     <button
-                                        className="mt-5 bg-blue-600 text-white py-1.5 px-5 text-sm rounded-lg hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 shadow-lg transform transition-transform hover:scale-105"
+                                        className="mt-5 bg-blue-600 text-white py-1 px-4 text-sm rounded-lg hover:bg-blue-500 focus:ring-4 focus:ring-blue-300 shadow-lg transform transition-transform hover:scale-105"
                                         onClick={() => viewMore(data.url)}
                                     >
                                         Visit WebSite
                                     </button>
                                     <button
-                                        className="mt-5 bg-green-600 text-white py-1.5 px-5 text-sm rounded-lg hover:bg-green-500 focus:ring-4 focus:ring-green-300 shadow-lg transform transition-transform hover:scale-105"
+                                        className="mt-5 bg-green-600 text-white py-1 px-4 text-sm rounded-lg hover:bg-green-500 focus:ring-4 focus:ring-green-300 shadow-lg transform transition-transform hover:scale-105"
                                         onClick={() => viewMore(data.gitHubLink)}
                                     >
                                         GitHub Code
