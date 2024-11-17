@@ -13,8 +13,8 @@ const NotFound = () => {
             <Typography variant="h1" className="text-6xl font-bold text-blue-600 mb-4">
                 404
             </Typography>
-            <Typography variant="h5" className="text-2xl font-semibold text-gray-700 mb-4">
-                Page Not Found
+            <Typography variant="h6" className="text-2xl font-semibold text-gray-700 mb-4">
+                Page Not Found !
             </Typography>
             <Typography className="text-gray-500 mb-8 mt-5">
                 Sorry, the page you are looking for doesn't exist.

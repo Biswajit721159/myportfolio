@@ -20,6 +20,7 @@ const ForgotPassword = () => {
 		e.preventDefault();
 		if (!validateEmail(email)) {
 			toast.error("Invalid Email");
+			return;
 		}
 		try {
 			setLoading(true);
