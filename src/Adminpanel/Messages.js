@@ -14,19 +14,27 @@ const Messages = () => {
     const dispatch = useDispatch();
     const [loading, setLoading] = useState(false);
 
-    const loadData = async () => {
-        try {
-            setLoading(true);
-            let data = await fetchMessages();
-            dispatch(messagesmethod.AddMessage(data.data));
-        } catch (e) {
-            toast.warn(e.message);
-            dispatch(usermethod.Logout_User());
+    useEffect(() => {
+        const loadData = async () => {
+            try {
+                setLoading(true);
+                let data = await fetchMessages();
+                dispatch(messagesmethod.AddMessage(data.data));
+            } catch (e) {
+                toast.warn(e.message);
+                dispatch(usermethod.Logout_User());
+                navigate('/Login');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        if (!userinfo) {
             navigate('/Login');
-        } finally {
-            setLoading(false);
+        } else {
+            loadData();
         }
-    };
+    }, [userinfo, navigate, dispatch]);
 
     const deleteMess = async (id) => {
         try {
@@ -39,14 +47,6 @@ const Messages = () => {
             navigate('/Login');
         }
     }
-
-    useEffect(() => {
-        if (!userinfo) {
-            navigate('/Login');
-        } else {
-            loadData();
-        }
-    }, []);
 
     return (
         <div className="container mx-auto my-5 p-6 bg-gray-100">

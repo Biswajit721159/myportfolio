@@ -6,7 +6,7 @@ import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import NotFound from "./components/NotFound";
 import Login from "./components/user/Login";
 import Messages from "./Adminpanel/Messages";
