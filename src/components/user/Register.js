@@ -11,7 +11,6 @@ import {
 } from "../../helpers/fromValidationCheckers";
 import { toast } from "react-toastify";
 import { register } from "../../utilities/authApi";
-import CircularProgress from "@mui/material/CircularProgress";
 import FullpageLoader from "../../common/FullpageLoader";
 
 const Register = () => {

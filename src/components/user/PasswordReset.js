@@ -15,22 +15,22 @@ const PasswordReset = () => {
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [user, setUser] = useState();
 
-	const fetchTokenData = async () => {
-		try {
-			setLoading(true);
-			const response = await checkTokenData(token);
-			setUser(response.data);
-		} catch (e) {
-			toast.warn(e?.message);
-			navigate("/404");
-		} finally {
-			setLoading(false);
-		}
-	};
-
 	useEffect(() => {
+		const fetchTokenData = async () => {
+			try {
+				setLoading(true);
+				const response = await checkTokenData(token);
+				setUser(response.data);
+			} catch (e) {
+				toast.warn(e?.message);
+				navigate("/404");
+			} finally {
+				setLoading(false);
+			}
+		};
+
 		fetchTokenData();
-	}, []);
+	}, [token, navigate]);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

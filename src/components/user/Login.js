@@ -25,7 +25,7 @@ const Login = () => {
 		if (user) {
 			navigate("/");
 		}
-	}, [user]);
+	}, [user, navigate]);
 
 	const handleChange = (e) => {
 		const { name, value, type, checked } = e.target;
@@ -34,7 +34,7 @@ const Login = () => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		const { email, password, rememberMe } = formData;
+		const { email, password } = formData;
 		if (!validateEmail(email)) {
 			toast.error("Invalid Email");
 			return;

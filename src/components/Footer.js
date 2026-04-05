@@ -1,9 +1,13 @@
-import { Typography } from '@mui/material';
+import React from 'react';
+
 const Footer = () => {
     return (
-        <footer className="bg-blue-600 text-white p-4 text-center mt-auto">
-            <Typography variant="body2">&copy; {new Date().getFullYear()} My Portfolio - All rights reserved.</Typography>
+        <footer className="bg-dark-bg border-t border-dark-border py-8 text-center mt-auto">
+            <p className="text-sm font-medium text-dark-muted">
+                &copy; {new Date().getFullYear()} Biswajit Ghosh. All rights reserved.
+            </p>
         </footer>
-    )
-}
+    );
+};
+
 export default Footer;
