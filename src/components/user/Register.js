@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { TextField, Button, InputAdornment } from "@mui/material";
 import PersonIcon from "@mui/icons-material/Person";
 import EmailIcon from "@mui/icons-material/Email";
@@ -12,6 +12,7 @@ import {
 import { toast } from "react-toastify";
 import { register } from "../../utilities/authApi";
 import FullpageLoader from "../../common/FullpageLoader";
+import { gsap } from "gsap";
 
 const Register = () => {
 	const [loading, setLoading] = useState(false);
@@ -23,14 +24,51 @@ const Register = () => {
 	});
 	const history = useNavigate();
 
+	// GSAP Refs
+	const formContainerRef = useRef(null);
+	const titleRef = useRef(null);
+	const inputRefs = useRef([]);
+	const buttonRef = useRef(null);
+
+	// GSAP Animations
+	useEffect(() => {
+		const timeline = gsap.timeline();
+
+		// Title animation
+		timeline.from(titleRef.current, {
+			opacity: 0,
+			y: -50,
+			duration: 0.8,
+			ease: "power3.out",
+		});
+
+		// Form animation
+		timeline.from(inputRefs.current, {
+			opacity: 0,
+			y: 50,
+			stagger: 0.2,
+			duration: 0.6,
+			ease: "power3.out",
+		});
+
+		// Button animation
+		timeline.from(buttonRef.current, {
+			opacity: 0,
+			scale: 0.8,
+			duration: 0.5,
+			ease: "elastic.out(1, 0.5)",
+		});
+	}, []);
+
 	const handleChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		setFormData({ ...formData, [name]: type === "checkbox" ? checked : value });
+		const { name, value } = e.target;
+		setFormData({ ...formData, [name]: value });
 	};
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		const { fullName, email, password, confirmPassword } = formData;
+
 		if (!validateFullName(fullName)) {
 			toast.error("Invalid Full Name");
 			return;
@@ -44,7 +82,7 @@ const Register = () => {
 			return;
 		}
 		if (password !== confirmPassword) {
-			toast.error("Password and Confirm Password are not match");
+			toast.error("Password and Confirm Password do not match");
 			return;
 		}
 		try {
@@ -61,8 +99,16 @@ const Register = () => {
 
 	return (
 		<div className="flex items-center justify-center min-h-screen bg-gray-100">
-			<div className="w-full max-w-md bg-white p-8 shadow-md rounded-lg">
-				<h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Register</h2>
+			<div
+				className="w-full max-w-md bg-white p-8 shadow-md rounded-lg"
+				ref={formContainerRef}
+			>
+				<h2
+					className="text-2xl font-bold text-center text-gray-800 mb-6"
+					ref={titleRef}
+				>
+					Register
+				</h2>
 				<form onSubmit={handleSubmit} className="space-y-6">
 					<TextField
 						label="Full Name"
@@ -78,6 +124,7 @@ const Register = () => {
 								</InputAdornment>
 							),
 						}}
+						ref={(el) => (inputRefs.current[0] = el)}
 					/>
 
 					<TextField
@@ -94,6 +141,7 @@ const Register = () => {
 								</InputAdornment>
 							),
 						}}
+						ref={(el) => (inputRefs.current[1] = el)}
 					/>
 
 					<TextField
@@ -111,6 +159,7 @@ const Register = () => {
 								</InputAdornment>
 							),
 						}}
+						ref={(el) => (inputRefs.current[2] = el)}
 					/>
 
 					<TextField
@@ -128,6 +177,7 @@ const Register = () => {
 								</InputAdornment>
 							),
 						}}
+						ref={(el) => (inputRefs.current[3] = el)}
 					/>
 
 					<Button
@@ -139,8 +189,9 @@ const Register = () => {
 							"&:hover": { backgroundColor: "#2563eb" },
 						}}
 						disabled={loading}
+						ref={buttonRef}
 					>
-						Register
+						{loading ? <CircularProgress size={24} /> : "Register"}
 					</Button>
 				</form>
 				<p className="text-sm text-gray-600 text-center mt-4">
